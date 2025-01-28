@@ -1,0 +1,7 @@
+[dev]
+vm1 ansible_host=13.59.21.74
+vm2 ansible_host=3.145.163.151
+[qa]
+vm3 ansible_host=18.216.122.2
+vm4 ansible_host=3.144.250.57
+vm5 ansible_host=18.119.112.32

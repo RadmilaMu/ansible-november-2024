@@ -1,0 +1,11 @@
+- hosts: all 
+  become: yes 
+  tasks: 
+  - name: Create user 
+    ansible.builtin.user:   #sudo useradd
+      name: "{{ item }}"    #same as "for i"(loop) 
+    loop:
+      - kaizen
+      - hello
+      - world
+      - november    

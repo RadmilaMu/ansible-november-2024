@@ -1,0 +1,14 @@
+- hosts: all
+  become: yes 
+  tasks:
+  - name: Install packages
+    ansible.builtin.apt:
+      name: unzip
+    notify: start apache #if tasks will change it will be output with name of exact handler 
+
+  handlers:      ####
+  - name: Start apache  #handler has to have Unic Name 
+    ansible.builtin.service:   
+      name: apache2
+      state: restarted
+      enabled: yes

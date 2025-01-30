@@ -1,0 +1,14 @@
+- hosts: all
+  become: yes   #sudo
+  vars:                       #varible
+    package: apache2
+  tasks:
+  - name: Install packages
+    ansible.builtin.apt:
+     name: "{{ package }}"   #output of varibles same as pathon 
+
+  - name: Start apache
+    ansible.builtin.service:   
+      name: "{{ package }}"
+      state: started
+      enabled: yes
